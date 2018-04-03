@@ -1,0 +1,10 @@
+class Color:
+    MAGENTA = '\033[35m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[94m'
+    DARK_CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    WHITE = '\033[37m'
+    END = '\033[0m'
