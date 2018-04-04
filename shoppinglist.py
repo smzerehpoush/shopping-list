@@ -1,6 +1,11 @@
-import time, os, requests, pygame, urllib
+import time
+import loading
+import os
+import constants
+
 from color import Color
 
+loading.main()
 dic = {}
 
 
@@ -15,7 +20,11 @@ def sys():
     print(Color.BOLD + Color.RED + ' \\------------------------------/' + Color.END)
 
 
-
+def clean_terminal():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 
 def all():
@@ -105,7 +114,7 @@ while True:
         all()
     # =====================================================================================================================================================================
     elif send == "6":
-        shop_txt = desktop_directory + "shopping-list-by-SYS113.txt"
+        shop_txt = constants.desktop_directory + "shopping-list-by-SYS113.txt"
         SYS113_shop = open(shop_txt, "w")
         SYS113_shop.write(' /------------------------------\\\n')
         SYS113_shop.write(' |    mahsol    |     gheymat   |')
@@ -116,7 +125,7 @@ while True:
         SYS113_shop.close()
 
         print(Color.BOLD + Color.DARK_CYAN + 'save shod list mahsolat dar %sshopping-list-by-SYS113.txt !\n' % (
-            desktop_directory) + Color.END)
+            constants.desktop_directory) + Color.END)
     # =====================================================================================================================================================================
     elif send == "7":
         calc1 = int(input(Color.BOLD + Color.BLUE + "\n add aval : " + Color.YELLOW))

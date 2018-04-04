@@ -45,27 +45,29 @@ def print_loading_message():
     clean_terminal()
 
 
-def load():
+def main():
     clean_terminal()
-    os.system('mkdir -p ~/' + constants.tmp_dir)
 
-    if os.path.isfile(bg_sound_path):
-        print(bg_sound_path)
-    else:
-        print('downloading song')
-        req = requests.get(bg_sound_url)
-        file = open(bg_sound_path, 'wb')
+    if not os.path.isfile(constants.bg_sound_path):
+        os.system('mkdir -p ~/' + constants.tmp_dir)
+        print('downloading song ...')
+        req = requests.get(constants.bg_sound_url)
+        file = open(constants.bg_sound_path, 'wb')
         for chunk in req.iter_content(100000):
             file.write(chunk)
         file.close()
-        if 'background_music.mp3' not in os.listdir(tmp_path):
+        if 'background_music.mp3' not in os.listdir(constants.tmp_path):
             while True:
                 print_loading_message()
-                if 'background_music.mp3' in os.listdir(tmp_path):
+                if 'background_music.mp3' in os.listdir(constants.tmp_path):
                     break
         print_loading_message()
         print_loading_message()
-        pygame.mixer.init(44100, -16, 2, 2048)
-        pygame.mixer.music.load(bg_sound_path)
-        pygame.mixer.music.set_volume(0.5)
-        pygame.mixer.music.play(-1)
+    pygame.mixer.init(44100, -16, 2, 2048)
+    pygame.mixer.music.load(constants.bg_sound_path)
+    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.play(-1)
+
+
+if __name__ == '__main__':
+    main()
