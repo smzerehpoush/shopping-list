@@ -29,7 +29,7 @@ def clean_terminal():
 
 def all():
     print(
-        Color.BOLD + Color.GREEN + " -+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+- " + Color.RED + "CODED" + Color.YELLOW + " BY " + Color.BLUE + "SYS113" + Color.GREEN + " -+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+- " + Color.END)
+        Color.BOLD + Color.GREEN + " -+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+- " + Color.RED + "CODED" + Color.YELLOW + " BY " + Color.BLUE + "SYS113 " + Color.GREEN + " -+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+- " + Color.END)
     print(
         Color.BOLD + Color.BLUE + "\n\t\t\t\t\t\t      [" + Color.RED + "+" + Color.BLUE + "]" + Color.GREEN + "  0 = exit             " + Color.BLUE + "[" + Color.RED + "+" + Color.BLUE + "]" + Color.END)
     print(

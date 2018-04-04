@@ -56,13 +56,8 @@ def main():
         for chunk in req.iter_content(100000):
             file.write(chunk)
         file.close()
-        if 'background_music.mp3' not in os.listdir(constants.tmp_path):
-            while True:
-                print_loading_message()
-                if 'background_music.mp3' in os.listdir(constants.tmp_path):
-                    break
-        print_loading_message()
-        print_loading_message()
+        while 'background_music.mp3' not in os.listdir(constants.tmp_path):
+            print_loading_message()
     pygame.mixer.init(44100, -16, 2, 2048)
     pygame.mixer.music.load(constants.bg_sound_path)
     pygame.mixer.music.set_volume(0.5)
